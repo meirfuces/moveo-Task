@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Vehicle</title>
+</head>
+
+<body>
+    <li><a href="/">Garagh</a></li>
+    <main>
+        <form action="/add-vehicle" method="POST">
+            <label for="title"></label>
+            <br></br>
+            Name
+            <input type="text" name="title"></input>  Licence Number
+            <input type="text" name="licenceNumber"></input>
+            <input type="checkbox" name="electic" >electic</input>
+            <br>
+            <br>
+           
+            <div style="width:200px;">
+                <select name="typeCar"id="typeCar">
+                  <option value="MotoCycle">MotoCycle</option>
+                  <option value="Car">Car</option>
+                  <option value="Truck">Truck</option>
+                </select>
+              </div>
+              <br>
+            <button type="submit">Add vehicle</button>
+        </form>
+
+       
+
+    </main>
+
+    
+</body>
+
+</html>

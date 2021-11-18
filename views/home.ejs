@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <nav>
+        <ul>
+            <li><a href="/add-vehicle">add-vehicle</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home</title>
+</head>
+
+<body>
+    <h1>home</h1>
+    <form action="/search" method="POST">
+        <label for="licenseNumber">Serch vehicle</label>
+        <br></br>
+
+        <input type="text" name="licenseNumber"></input>
+        <br>
+        <br>
+        <button type="submit">search</button>
+    </form>
+
+    <% for (let vehicle of vehicles) { %>
+        <h1>
+            <%= vehicle.modelName %>
+        </h1>
+        <ul>
+
+            <li>fuel: <%= vehicle.fuel %>
+            </li>
+            <li>licenseNumber: <%= vehicle.licenseNumber %>
+            </li>
+            <li>wheels: <%= vehicle.wheels %> electric: <% if (vehicle.electric){ %> Yes <% } else { %> No <% } %>
+            </li>
+            <li>tire Pressure: <%= vehicle.tirePressure %>
+            </li>
+        </ul>
+        <form action="/inflact" method="POST">
+        <input type="hidden" name="inflact" value= <%= vehicle.licenseNumber %>></input>
+        <button type="submit">inflact</button>
+        </form >
+<br>
+            <form action="/add-energy" method="POST">
+                <input type="hidden" name="energy" id="energy" value= <%= vehicle.licenseNumber %>></input>
+                <button type="submit">add-energy</button>
+                <form >
+        <% } %>
+
+</body>
+
+</html>
